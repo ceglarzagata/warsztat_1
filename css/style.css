@@ -8,11 +8,28 @@
 
 @font-face {
     font-family: 'raleway';
+    src: url(../fonts/raleway-extralight-webfont.woff2) format('woff2'),
+    url(../fonts/raleway-extralight-webfont.woff) format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url(../fonts/raleway-light-webfont.woff2) format('woff2'),
+    url(../fonts/raleway-light-webfont.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
     src: url(../fonts/raleway-regular-webfont.woff2) format('woff2'),
     url(../fonts/raleway-regular-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 
 
 body {
@@ -26,6 +43,23 @@ body {
     width: 1054px;
     margin: 0 auto;
 }
+
+h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 320px;
+    height: 8px;
+    margin-left: -2px;
+    margin-bottom: 75px;
+    background: #24ba9f;
+
+}
+
 
 #header {
     height: 42px;
@@ -290,21 +324,6 @@ ul.news li:hover .news_item {
     padding: 50px 0;
 }
 
-#price_wrapper h2 {
-    font-size: 22px;
-    text-transform: uppercase;
-}
-
-#price_wrapper h2:after {
-    content: '';
-    display: block;
-    width: 320px;
-    height: 8px;
-    margin-left: -2px;
-    margin-bottom: 75px;
-    background: #24ba9f;
-
-}
 ul.prices {
     display: flex;
 }
@@ -427,31 +446,13 @@ ul.prices > li:hover {
     transition: 0.4s;
 }
 
-ul.prices > li:hover li:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -25px;
-    left: 153px;
-    height: 25px;
-    width: 25px;
-    z-index: 2;
+ul.prices > li:hover:before {
     background: #fff;
-    border-radius: 50%;
 }
 
-ul.prices > li:hover li:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -40px;
-    left: 138px;
-    height: 55px;
-    width: 55px;
-    z-index: 1;
+ul.prices > li:hover:after {
     background: #24ba9f;
     border: 2px solid #24ba9f;
-    border-radius: 50%;
 }
 
 ul.prices > li:hover h3 {
@@ -479,6 +480,128 @@ ul.prices > li:hover button {
     background: #fff;
     color: #24ba9f;
 }
+
+
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+form {
+    flex: 2;
+    margin-right: 55px;
+}
+
+.form_item {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(36, 186, 159, 0.45);
+    font-family: 'raleway', Tahoma, Arial, sans-serif;
+    font-size: 18px;
+    color: #9a9a9a;
+    line-height: 1.5;
+}
+
+.form_item:last-child {
+    margin-bottom: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #cdcdcd;
+    font-family: 'raleway', Tahoma, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #cdcdcd;
+    font-family: 'raleway', Tahoma, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #cdcdcd;
+    font-family: 'raleway', Tahoma, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+
+}
+
+:-ms-input-placeholder {
+    color: #cdcdcd;
+    font-family: 'raleway', Tahoma, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+
+}
+
+.send {
+    flex: 1;
+}
+
+.send img {
+    display: block;
+    margin-bottom: 35px;
+}
+.send input.button {
+    padding: 17px 31px 10px;
+    width: 100%;
+    background: #24ba9f;
+    border: none;
+    border-radius: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.send label {
+    font-size: 18px;
+
+}
+
+.checkbox {
+    float: left;
+    position: relative;
+    margin: 20px;
+
+}
+
+.checkbox:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #24ba9f;
+    cursor: pointer;
+    clear: both;
+
+}
+
+.checkbox:checked:after {
+    background: #fff url(../images/form_ok.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+
+
+
+
+
+
+
+
 
 
 
