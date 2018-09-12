@@ -8,10 +8,10 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url(../fonts/raleway-extralight-webfont.woff2) format('woff2'),
-    url(../fonts/raleway-extralight-webfont.woff) format('woff');
-    font-weight: 200;
-    font-style: normal;
+    src: url(../fonts/raleway-italic-webfont.woff2) format('woff2'),
+    url(../fonts/raleway-italic-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: italic;
 }
 
 @font-face {
@@ -30,8 +30,6 @@
     font-style: normal;
 }
 
-
-
 body {
     font-family: 'raleway', Tahoma, Arial, sans-serif;
     font-size: 14px;
@@ -44,8 +42,13 @@ body {
     margin: 0 auto;
 }
 
+button:focus {
+    outline: none;
+}
+
 h2 {
     font-size: 22px;
+    color: #000;
     text-transform: uppercase;
 }
 
@@ -57,9 +60,7 @@ h2:after {
     margin-left: -2px;
     margin-bottom: 75px;
     background: #24ba9f;
-
 }
-
 
 #header {
     height: 42px;
@@ -70,6 +71,11 @@ h2:after {
 #header .container {
     display: flex;
     justify-content: space-between;
+}
+
+#header a {
+    color: #fff;
+    text-decoration: none;
 }
 
 #header h1 {
@@ -89,7 +95,7 @@ nav {
 }
 
 ul.menu {
-text-align: right;
+    text-align: right;
 }
 
 li.menu_element {
@@ -104,7 +110,6 @@ li.menu_element:last-child  {
 
 li.menu_element > a {
     padding: 0 15px;
-    color: #fff;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -119,18 +124,17 @@ li.menu_element > a:last-child {
 ul.dropdown {
     position: absolute;
     top: 120%;
-    overflow: hidden;
-    height: 0;
     width: 120px;
     margin-left: -2px;
+    padding: 10px 0;
     background: black;
-    transition: 0.4s;
+    transition: .4s;
+    opacity:0;
 }
 
 li.dropdown_element {
-    text-align: right;
+    text-align: left;
     line-height: 25px;
-    padding: 5px 0;
 }
 
 li.dropdown_element a {
@@ -140,9 +144,8 @@ li.dropdown_element a {
 }
 
 li.menu_element:hover > ul.dropdown {
-    height: 105px;
-    transition: 0.4s;
-    overflow: initial;
+    transition: .4s;
+    opacity:1;
 }
 
 ul.dropdown:before {
@@ -157,9 +160,6 @@ ul.dropdown:before {
     background: black;
     transform: rotate(45deg);
 }
-
-
-
 
 .slider {
     height: 505px;
@@ -181,6 +181,7 @@ ul.dropdown:before {
 }
 
 button.navigator {
+    height: 350px;
     background: none;
     border: none;
     color: #24ba9f;
@@ -239,11 +240,6 @@ button.navigator.right {
     text-transform: uppercase;
 }
 
-
-
-
-
-
 section.container {
     padding: 27px 0 95px 0;
 }
@@ -252,6 +248,7 @@ ul.news {
     display: flex;
     justify-content: space-between;
 }
+
 ul.news li {
    position: relative;
 }
@@ -312,10 +309,6 @@ ul.news li:hover .news_item {
     display: block;
 }
 
-
-
-
-
 #price_wrapper {
     background:#f1f1f1;
 }
@@ -327,7 +320,6 @@ ul.news li:hover .news_item {
 ul.prices {
     display: flex;
 }
-
 
 ul.prices > li {
     display: flex;
@@ -398,6 +390,7 @@ ul.prices h3 {
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1;
+    color: #c2c2c2;
 }
 
 .price p.amount {
@@ -481,7 +474,13 @@ ul.prices > li:hover button {
     color: #24ba9f;
 }
 
+#contact.container {
+    padding-bottom: 65px;
+}
 
+#contact h2:after {
+    margin-bottom: 30px;
+}
 
 .form {
     display: flex;
@@ -515,7 +514,6 @@ form {
     font-family: 'raleway', Tahoma, Arial, sans-serif;
     font-weight: 300;
     font-size: 35px;
-
 }
 
 :-moz-placeholder { /* Firefox 18- */
@@ -523,7 +521,6 @@ form {
     font-family: 'raleway', Tahoma, Arial, sans-serif;
     font-weight: 300;
     font-size: 35px;
-
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
@@ -531,7 +528,6 @@ form {
     font-family: 'raleway', Tahoma, Arial, sans-serif;
     font-weight: 300;
     font-size: 35px;
-
 }
 
 :-ms-input-placeholder {
@@ -539,7 +535,6 @@ form {
     font-family: 'raleway', Tahoma, Arial, sans-serif;
     font-weight: 300;
     font-size: 35px;
-
 }
 
 .send {
@@ -550,6 +545,7 @@ form {
     display: block;
     margin-bottom: 35px;
 }
+
 .send input.button {
     padding: 17px 31px 10px;
     width: 100%;
@@ -564,14 +560,13 @@ form {
 
 .send label {
     font-size: 18px;
-
+    color: #c2c2c2;
 }
 
 .checkbox {
     float: left;
     position: relative;
-    margin: 20px;
-
+    margin: 20px 30px 50px 20px;
 }
 
 .checkbox:after {
@@ -579,34 +574,19 @@ form {
     width: 50px;
     height: 50px;
     position: absolute;
-    top: -25px;
-    left: -25px;
+    top: -17px;
+    left: -20px;
     background: #fff;
     border-radius: 2px;
-    border: 1px solid #24ba9f;
+    border: 1px solid rgba(36, 186, 159, 0.45);
     cursor: pointer;
     clear: both;
-
 }
 
 .checkbox:checked:after {
     background: #fff url(../images/form_ok.jpg) no-repeat center center;
     background-size: contain;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 footer.container {
     display: flex;
@@ -658,17 +638,6 @@ h4 {
 h4 span {
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
